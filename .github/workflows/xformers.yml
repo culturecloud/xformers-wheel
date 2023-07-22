@@ -60,7 +60,9 @@ jobs:
           echo "datetime=$(/bin/date -u +"%Y/%m/%d/%H%M")" >> $GITHUB_OUTPUT
       - name: Build
         run: |
-          python${{matrix.python}} -m pip install wheel setuptools ninja
+          python${{matrix.python}} -m venv --upgrade-deps venv
+          . .venv/bin/activate
+          python${{matrix.python}} -m pip install wheel ninja
           python${{matrix.python}} -m pip install --pre torch torchvision torchaudio pytorch-triton --index-url ${{ matrix.config.pip_index }}
           python${{matrix.python}} -m pip install -r requirements.txt
           python${{matrix.python}} setup.py bdist_wheel -d dist/ -k --plat-name manylinux2014_x86_64
