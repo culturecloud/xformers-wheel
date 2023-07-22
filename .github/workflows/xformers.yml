@@ -61,7 +61,7 @@ jobs:
       - name: Build
         run: |
           python${{matrix.python}} -m venv --upgrade-deps venv
-          . .venv/bin/activate
+          source venv/bin/activate
           python${{matrix.python}} -m pip install wheel ninja
           python${{matrix.python}} -m pip install --pre torch torchvision torchaudio pytorch-triton --index-url ${{ matrix.config.pip_index }}
           python${{matrix.python}} -m pip install -r requirements.txt
