@@ -72,7 +72,7 @@ jobs:
           echo "releasebody=$(pip freeze | grep torch)" >> $GITHUB_OUTPUT
         shell: bash
       - name: Upload binaries to release
-        uses: svenstaro/upload-release-action@2.5.0
+        uses: svenstaro/upload-release-action@2.6.1
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ./dist/*.whl
@@ -80,4 +80,3 @@ jobs:
           body: ${{ steps.get-vars.outputs.releasebody }}
           file_glob: true
           overwrite: true
-          prerelease: true
