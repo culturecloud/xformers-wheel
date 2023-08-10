@@ -1,4 +1,1 @@
-This repo contains workflows that builds Xformers wheel with settings that the official Pip wheels don't offer:
-- Xformers, built with Torch Nightly
-- Additionally, add support for some architectures that the official wheels don't cover (Currently 5.2 is supported here)
-- Cuda 11.8 Xformers
+> This repo contains a workflow that builds the wheels for latest [xformers](https://github.com/facebookresearch/xformers) with [PyTorch Nightly](https://download.pytorch.org/whl/nightly) and [Nvidia CUDA 11.8](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=runfile_local) for SM75 series GPUs (such as the widely known [Tesla T4](https://www.nvidia.com/en-us/data-center/tesla-t4/))
